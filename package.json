@@ -1,0 +1,25 @@
+{
+  "name": "fantasy",
+  "version": "1.0.0",
+  "description": "This is a fantastic fantasy game",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./tests --recursive"
+  },
+  "keywords": [
+    "fantasy",
+    "game",
+    "elte"
+  ],
+  "author": "Zsolt Fuzesi",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.0.1",
+    "koa": "^2.2.0",
+    "koa-body": "^2.0.1",
+    "koa-router": "^7.2.0",
+    "mocha": "^3.4.2",
+    "supertest": "^3.0.0",
+    "user": "0.0.0"
+  }
+}
