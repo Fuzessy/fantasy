@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<script>
+
+function recHero(){
+		$.post("http://localhost:3456/heroes", 
+				{
+					type 	: 'Warrior',
+					hp		: '10'
+				}, function(result){
+	        $("span").html(result);
+	    });
+    };
+</script>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.html">Főoldal</a></li>
+      <li class="active"><a href="#">Hősök rögzítése</a></li>
+      <li><a href="getHeroes.html">Hősök lekérdezése</a></li>
+      <li><a href="battle.html">Csata</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <h2>Hősök felvitele</h2>
+  <form action="javascript:recHero" method="POST">
+    
+    <div class="form-group">
+	  	<label for="type">Hős típusa:</label>
+	 		<select class="form-control" id="type" required="true"	>
+		    <option disabled hidden style='display: none' value=""></option>
+		    <option selected value="Warrior">Harcos</option>
+		    <option value="Priest">Pap</option>
+	  	</select>
+	</div>
+	
+    <div class="form-group">
+	  	<label for="weapon">Fegyver:</label>
+	 		<select class="form-control" id="weapon" >
+		    <option selected value=""></option>
+		    <option value="Sword">Kard</option>
+		    <option value="Dagger">Tőr</option>
+		    <option value="MagicStick">Varázspálca</option>
+	  	</select>
+	</div>
+
+    <div class="form-group">
+	  	<label for="hp">Életerő:</label>
+	 		<input type="number" value="10" min="1" max="30" id="hp" class="form-control" required="true"></input>
+	</div>
+
+    <button type="button" onclick="recHero()" class="btn btn-default">Submit</button>
+  
+  </form>
+</div>
+
+</body> 
+</html>

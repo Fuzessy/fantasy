@@ -10,7 +10,6 @@ class Main {
 	  constructor(Koa, Router) {
 	    this._app = new Koa();
 	    this._router = new Router();
-	    console.log('lálálá');
 	    this._bindMiddlewares();
 	  }
 
